@@ -1,6 +1,6 @@
 require "./lib/ship"
 
-Rspec.describe do
+RSpec.describe do
   describe "#initialize" do
     it "creates a ship instance" do
       cruiser = Ship.new("Cruiser", 3)
