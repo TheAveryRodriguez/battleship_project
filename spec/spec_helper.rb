@@ -1,3 +1,3 @@
-require 'rspec'
-require './lib/ship'
-require './lib/cell'
+require "rspec"
+require "./lib/ship"
+require "./lib/cell"
