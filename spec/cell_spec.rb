@@ -36,7 +36,7 @@ RSpec.describe do
       cell.fire_upon
 
       expect(cell.ship.health).to eq(2)
-      expect(cell.fired_upon).to eq(true)
+      expect(cell.fired_upon?).to eq(true)
     end
   end
 end

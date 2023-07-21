@@ -15,8 +15,10 @@ class Cell
   end
 
   def fired_upon?
-    if fire_upon == true
+    if @ship.nil? && @ship.hit
       true
+    else
+      false
     end
   end
 
@@ -24,7 +26,7 @@ class Cell
     if !@ship.nil?
       @ship.hit
     else
-      # PLACE MISS
+      p "(¯`·._.··¸.-~*´¨¯¨`*·~-.,-(_YOU MISSED_)-,.-~*´¨¯¨`*·~-.¸··._.·´¯)"
     end
   end
 end
