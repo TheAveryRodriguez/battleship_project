@@ -1,33 +1,39 @@
-require './lib/ship'
+require "./lib/ship"
 
-cruiser = Ship.new("Cruiser", 3)
+Rspec.describe do
+  describe "#initialize" do
+    it "creates a ship instance" do
+      cruiser = Ship.new("Cruiser", 3)
 
-expect(cruiser.name
-#=> "Cruiser"
+      expect(cruiser.name).to eq("Cruiser")
+      expect(cruiser.length).to eq(3)
+      expect(cruiser.health).to eq(3)
+    end
+  end
 
-expect(cruiser.length
-#=> 3
+  describe "#sunk?" do
+    it "shows if a ship has no more health" do
+      cruiser = Ship.new("Cruiser", 3)
 
-expect(cruiser.health
-#=> 3
+      expect(cruiser.sunk?).to eq(false)
+      cruiser.hit
+      expect(cruiser.health).to eq(2)
+      cruiser.hit
+      expect(cruiser.health).to eq(1)
+      expect(cruiser.sunk?).to eq(false)
+      cruiser.hit
+      expect(cruiser.sunk?).to eq(true)
+    end
+  end
 
-expect(cruiser.sunk?
-#=> false
+  describe "#hit" do
+    it "removes 1 health from a ship" do
+      cruiser = Ship.new("Cruiser", 3)
 
-cruiser.hit
-
-expect(cruiser.health
-#=> 2
-
-expect(cruiser.hit
-
-expect(cruiser.health
-#=> 1
-
-expect(cruiser.sunk?
-#=> false
-
-expect(cruiser.hit
-
-expect(cruiser.sunk?
-#=> true
+      cruiser.hit
+      expect(cruiser.health).to eq(2)
+      cruiser.hit
+      expect(cruiser.health).to eq(1)
+    end
+  end
+end
