@@ -1,1 +1,7 @@
-# Need to create a ship class
+class Ship 
+  attr_reader
+
+  def initialize
+    
+  end
+end
