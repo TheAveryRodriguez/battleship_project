@@ -6,6 +6,7 @@ class Board
 
   def cells
     @cells = {}
+    create_cells
   end
 
   def create_cells
