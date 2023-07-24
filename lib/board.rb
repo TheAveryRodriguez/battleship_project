@@ -25,4 +25,9 @@ class Board
   def valid_coordinate?(coordinate)
     @cells.key?(coordinate) && @cells[coordinate].fired_upon? == false 
   end
+
+  def valid_placement?(ship, coordinates)
+    # require 'pry'; binding.pry
+    ship.length == coordinates.length
+  end
 end
