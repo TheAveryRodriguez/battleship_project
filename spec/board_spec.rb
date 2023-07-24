@@ -67,5 +67,4 @@ RSpec.describe do
       expect(board.valid_placement?(submarine, ["C1", "B1"])).to eq(false) 
     end
   end
-
 end
