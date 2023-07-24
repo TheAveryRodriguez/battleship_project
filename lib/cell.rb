@@ -24,17 +24,6 @@ class Cell
     if empty? == false
       @ship.hit
     end
-
-    # if !@ship.nil?
-    #   @ship.hit
-    #   if @ship.sunk?
-    #     "Try Again"
-    #   else
-    #     "Oh snap. You hit a ship!"
-    #   end
-    # else
-    #   "(¯`·._.··¸.-~*´¨¯¨`*·~-.,-(_YOU MISSED SUCKER_)-,.-~*´¨¯¨`*·~-.¸··._.·´¯)"
-    # end
   end
 
   def render(reveal_ship = false)
