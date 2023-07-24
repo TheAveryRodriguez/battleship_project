@@ -32,13 +32,4 @@ RSpec.describe do
       expect(board.cells["D4"]).to be_a(Cell)
     end
   end
-
-  # describe "#create_cells" do
-  #   it "creates a hash of cells" do
-  #     board = Board.new
-  #     board.create_cells
-
-  #     expect(board.cells[“A1”].coordinate).to eq(“A1”)
-  #   end
-  # end
 end
