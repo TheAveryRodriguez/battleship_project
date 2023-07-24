@@ -21,4 +21,8 @@ class Board
       "D4" => Cell.new("D4") 
     }
   end
+
+  def valid_coordinate?(coordinate)
+    @cells.key?(coordinate) && @cells[coordinate].fired_upon? == false 
+  end
 end
