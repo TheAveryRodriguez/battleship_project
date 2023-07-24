@@ -50,10 +50,27 @@ RSpec.describe do
     it "can rendera  cell" do 
       cell = Cell.new("B4")
 
-      cell = Cell.new("B4")
       expect(cell.render).to eq('.')
       cell.fire_upon
       expect(cell.render).to eq('M')
+    end
+  end
+
+  describe "#render different results" do 
+    it "can render different results in a cell" do 
+      cell = Cell.new("B4")
+      cruiser = Ship.new("Cruiser", 3)
+
+      cell.place_ship(cruiser)
+      expect(cell.render).to eq('.')
+      expect(cell.render(true)).to eq('S')
+      cell.fire_upon
+      expect(cell.render).to eq('H')
+      expect(cruiser.sunk?).to eq(false)
+      cruiser.hit
+      cruiser.hit
+      expect(cruiser.sunk?).to eq(true)
+      expect(cell.render).to eq('X')
     end
   end
 end
