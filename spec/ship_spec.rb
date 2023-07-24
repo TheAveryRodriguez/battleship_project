@@ -4,8 +4,14 @@ RSpec.describe do
   describe "#initialize" do
     it "creates a ship instance" do
       cruiser = Ship.new("Cruiser", 3)
-
       expect(cruiser).to be_a(Ship)
+    end
+  end
+
+  describe "#attributes" do 
+    it 'initializes with readable attributes' do 
+      cruiser = Ship.new("Cruiser", 3)
+
       expect(cruiser.name).to eq("Cruiser")
       expect(cruiser.length).to eq(3)
       expect(cruiser.health).to eq(3)
