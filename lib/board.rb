@@ -27,20 +27,16 @@ class Board
   end
 
   def valid_placement?(ship, coordinates)
-    ship.length == coordinates.length
-  end
-
-  def valid_placement?(ship, coordinates)
-    ship.length == coordinates.length && 
-    coordinates.all? { |coordinate| valid_coordinate?(coordinate)} &&
-    consec_horizontal?(coordinates) || consec_vertical(coordinates)
+    ship.length == coordinates.length &&
+      coordinates.all? { |coordinate| valid_coordinate?(coordinate) } &&
+      consec_horizontal?(coordinates) || consec_vertical(coordinates)
   end
 
   def consec_horizontal?(coordinates)
     row = coordinates.first[0]
     numbers = coordinates.map { |coord| coord[1..-1].to_i }
     numbers == (numbers.first..numbers.last).to_a && coordinates.all? { |coord| coord[0] == row }
-  end 
+  end
 
   def consec_vertical(coordinates)
     numbers = coordinates.first[1]
