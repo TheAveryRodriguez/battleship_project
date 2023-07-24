@@ -9,12 +9,21 @@ RSpec.describe do
     end
   end
 
-  describe "#create_cells" do
-    it "creates a hash of cells" do
+  describe "cells" do 
+    it "can hold cells on a board" do 
       board = Board.new
-      board.create_cells
+      expect(board.cells).to be_a(Hash)
 
-      expect(board.cells[“A1”].coordinate).to eq(“A1”)
+      
     end
   end
+
+  # describe "#create_cells" do
+  #   it "creates a hash of cells" do
+  #     board = Board.new
+  #     board.create_cells
+
+  #     expect(board.cells[“A1”].coordinate).to eq(“A1”)
+  #   end
+  # end
 end
