@@ -1,6 +1,5 @@
 class GamePlay
 
-  
   def menu 
     puts "Welcome to BATTLESHIP!!
 
@@ -19,11 +18,8 @@ class GamePlay
   end 
 
   def computer_ship_placement 
-    # render computer board(false)
-    #render user board(false)
-
     # computer places sub and cruiser in: random coordinates && valid coordinates 
-    # -------- code to be written ---------
+    # -------- code to be written ---------(.sample) = randomization 
     puts "I have placed my ships. Now it is your turn."
     player_ship_placement
   end
@@ -47,7 +43,9 @@ class GamePlay
   end
 
   def show_board
-    # render computer board(false)
-    #render user board(true)
+    puts "=============COMPUTER BOARD============="
+    puts     # render computer board(false)
+    puts "==============PLAYER BOARD=============="
+    puts     #render user board(true)
   end
 end
