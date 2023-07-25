@@ -66,7 +66,6 @@ class Board
       "B " "#{@cells["B1"].render(true)} " + "#{@cells["B2"].render(true)} " + "#{@cells["B3"].render(true)} " + "#{@cells["B4"].render(true)} \n" +
       "C " "#{@cells["C1"].render(true)} " + "#{@cells["C2"].render(true)} " + "#{@cells["C3"].render(true)} " + "#{@cells["C4"].render(true)} \n" +
       "D " "#{@cells["D1"].render(true)} " + "#{@cells["D2"].render(true)} " + "#{@cells["D3"].render(true)} " + "#{@cells["D4"].render(true)} \n" 
-  
     end
   end
 end
