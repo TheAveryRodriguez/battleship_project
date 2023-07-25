@@ -43,4 +43,8 @@ class Board
     row = coordinates.map { |coord| coord[0].to_s }
     row == (row.first..row.last).to_a && coordinates.all? { |coord| coord[1] == numbers }
   end
+
+  def place(ship, coordinates)
+    @ship
+  end
 end
