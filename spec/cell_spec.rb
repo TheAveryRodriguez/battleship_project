@@ -8,15 +8,15 @@ RSpec.describe do
     end
   end
 
-  describe "#coordinate" do 
-    it 'initializes with a coordinate' do 
+  describe "#coordinate" do
+    it "initializes with a coordinate" do
       cell = Cell.new("B4")
       expect(cell.coordinate).to eq("B4")
     end
   end
 
-  describe "#ship" do 
-    it "checks for a ship in coordinate" do 
+  describe "#ship" do
+    it "checks for a ship in coordinate" do
       cell = Cell.new("B4")
       expect(cell.ship).to eq(nil)
       expect(cell.empty?).to eq(true)
@@ -46,31 +46,31 @@ RSpec.describe do
     end
   end
 
-  describe "render" do 
-    it "can rendera  cell" do 
+  describe "render" do
+    it "can rendera  cell" do
       cell = Cell.new("B4")
 
-      expect(cell.render).to eq('.')
+      expect(cell.render).to eq(".")
       cell.fire_upon
-      expect(cell.render).to eq('M')
+      expect(cell.render).to eq("M")
     end
   end
 
-  describe "#render different results" do 
-    it "can render different results in a cell" do 
+  describe "#render different results" do
+    it "can render different results in a cell" do
       cell = Cell.new("B4")
       cruiser = Ship.new("Cruiser", 3)
 
       cell.place_ship(cruiser)
-      expect(cell.render).to eq('.')
-      expect(cell.render(true)).to eq('S')
+      expect(cell.render).to eq(".")
+      expect(cell.render(true)).to eq("S")
       cell.fire_upon
-      expect(cell.render).to eq('H')
+      expect(cell.render).to eq("H")
       expect(cruiser.sunk?).to eq(false)
       cruiser.hit
       cruiser.hit
       expect(cruiser.sunk?).to eq(true)
-      expect(cell.render).to eq('X')
+      expect(cell.render).to eq("X")
     end
   end
 end
