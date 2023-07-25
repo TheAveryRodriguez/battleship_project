@@ -29,7 +29,8 @@ class Board
   def valid_placement?(ship, coordinates)
     ship.length == coordinates.length &&
       coordinates.all? { |coordinate| valid_coordinate?(coordinate) } &&
-      consec_horizontal?(coordinates) || consec_vertical(coordinates)
+      (consec_horizontal?(coordinates) || consec_vertical(coordinates)) &&
+      coordinates.none? { |coordinate| @cells[coordinate].ship }
   end
 
   def consec_horizontal?(coordinates)
@@ -45,6 +46,8 @@ class Board
   end
 
   def place(ship, coordinates)
+    return unless valid_placement?(ship, coordinates)
+
     coordinates.each do |coordinate|
       @cells[coordinate].place_ship(ship)
     end

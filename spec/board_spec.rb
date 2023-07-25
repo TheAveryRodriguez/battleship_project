@@ -107,5 +107,15 @@ RSpec.describe do
 
       expect(cell_3.ship).to eq(cell_2.ship)
     end
+
+    it "should check for valid_placements" do
+      board = Board.new
+      cruiser = Ship.new("Cruiser", 3)
+      submarine = Ship.new("Submarine", 2)
+
+      board.place(cruiser, ["A1", "A2", "A3"])
+
+      expect(board.valid_placement?(submarine, ["A1", "B1"])).to be(false)
+    end
   end
 end
