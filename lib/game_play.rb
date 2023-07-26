@@ -115,14 +115,14 @@ class GamePlay
       puts @computer_board.render(true)
       puts "==============PLAYER BOARD=============="
       puts @player_board.render(true)
-      puts "Your Fleet is DESTROYED! Better Luck Next Time!"
+      puts "You Destroyed My Fleet! YOU WIN!"
       play
     elsif @player_sunk_ships == 2
       puts "=============COMPUTER BOARD============="
       puts @computer_board.render(true)
       puts "==============PLAYER BOARD=============="
       puts @player_board.render(true)
-      puts "You Destroyed My Fleet! YOU WIN!"
+      puts "Your Fleet is DESTROYED! Better Luck Next Time!"
       play
     else
       turn
@@ -131,11 +131,11 @@ class GamePlay
   end
 
   def over?
-    if @player_sunk_ships == 2
-      puts "Your Fleet is DESTROYED! Better Luck Next Time!"
-      play
-    elsif @computer_sunk_ships == 2
+    if @computer_sunk_ships == 2
       puts "You Destroyed My Fleet! YOU WIN!"
+      play
+    elsif @player_sunk_ships == 2
+      puts "Your Fleet is DESTROYED! Better Luck Next Time!"
       play
     else
       turn
