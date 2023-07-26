@@ -17,6 +17,18 @@ class GamePlay
     end
   end 
 
+  def game_info
+    computer_board = Board.new 
+    computer_cruiser = Ship.new("Cruiser", 3)
+    computer_sub = Ship.new("Submarine", 2)
+    computer_sunk_ships = 0 
+
+    player_board = Board.new 
+    player_cruiser = Ship.new("Cruiser", 3)
+    player_sub = Ship.new("Submarine", 2)
+    player_sunk_ships = 0
+  end
+
   def computer_ship_placement 
     # computer places sub and cruiser in: random coordinates && valid coordinates 
     # -------- code to be written ---------(.sample) = randomization 
